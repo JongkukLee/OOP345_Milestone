@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="item.cpp" />
+    <ClCompile Include="order.cpp" />
     <ClCompile Include="task.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
@@ -27,6 +29,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FishTankTasks.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ItemList.dat" />
+    <Text Include="CustomerOrders.dat" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D1F1AAEE-16AB-45F7-8451-DF38F635A659}</ProjectGuid>

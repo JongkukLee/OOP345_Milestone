@@ -135,7 +135,7 @@ public:
 
 };
 
-
+/*
 int main(int argc, char* argv[])
 {
 	// 
@@ -152,19 +152,20 @@ int main(int argc, char* argv[])
 	string filename = argv[1];
 	char   delimiter = argv[2][0];
 
-	try {
+	try 
+	{
 		vector< vector<string> > csvDataTask;
 		csvRead(filename, delimiter, csvDataTask);
 		//csvPrint(csvDataTask);
 
 		TaskManager tm(csvDataTask);
-    tm.print();
-    tm.graph(filename);
-
+		tm.print();
+		tm.graph(filename);
 	}
-	catch (const string& e) {
+	catch (const string& e) 
+	{
 		cerr << "It threw! -->" << e << "\n";
 		return 2;
 	}
-
 }
+*/

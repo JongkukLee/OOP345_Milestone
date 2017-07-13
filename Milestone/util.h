@@ -17,4 +17,7 @@ using namespace std;
 	bool validTaskName(std::string&);
 	bool validTaskSlots(std::string&);
 
+	bool validItemName(std::string&);
+	bool validItemSequence(std::string&);
+
 //};

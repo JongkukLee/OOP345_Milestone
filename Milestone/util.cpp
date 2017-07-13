@@ -107,3 +107,29 @@ bool validTaskSlots(std::string& s)
 	}
 	return true;
 }
+
+bool validItemName(std::string& s)
+{
+	if (s.empty())
+		return false;
+
+	for (auto c : s)
+	{
+		if (!(isalnum(c) || c == ' '))
+			return false;
+	}
+	return true;
+}
+
+bool validItemSequence(std::string& s)
+{
+	if (s.empty())
+		return false;
+
+	for (auto c : s)
+	{
+		if (!(isdigit(c) || c == ' '))
+			return false;
+	}
+	return true;
+}
