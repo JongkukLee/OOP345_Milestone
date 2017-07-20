@@ -35,10 +35,10 @@ void csvPrint(std::vector< std::vector<std::string> > & csvData)
 
 void TrimSpaces(std::string& s)
 {
-	while (!s.empty() && s[0] == ' ')
+	while (!s.empty() && (s[0] == ' ' || s[0] == '\t'))
 		s.erase(0, 1);
 
-	while (!s.empty() && s[s.size() - 1] == ' ')
+	while (!s.empty() && (s[s.size() - 1] == ' ' || s[s.size() - 1] == '\t'))
 		s.erase(s.size() - 1, 1);
 }
 
@@ -115,7 +115,7 @@ bool validItemName(std::string& s)
 
 	for (auto c : s)
 	{
-		if (!(isalnum(c) || c == ' '))
+		if (!(isalnum(c) || c == ' ' || c == '-'))
 			return false;
 	}
 	return true;

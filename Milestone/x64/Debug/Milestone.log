@@ -1,2 +1,17 @@
-﻿  Milestone.vcxproj -> C:\OOP345_Milestone\x64\Debug\Milestone.exe
+﻿  item.cpp
+  iot.cpp
+  Generating Code...
+  Compiling...
+  task.cpp
+c:\oop345_milestone\milestone\task.cpp(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  t.cpp
+c:\oop345_milestone\milestone\t.cpp(13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  t-test.cpp
+  order.cpp
+  o.cpp
+  o-test.cpp
+  i.cpp
+  i-test.cpp
+  Generating Code...
+  Milestone.vcxproj -> C:\OOP345_Milestone\x64\Debug\Milestone.exe
   Milestone.vcxproj -> C:\OOP345_Milestone\x64\Debug\Milestone.pdb (Full PDB)
