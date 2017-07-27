@@ -25,6 +25,13 @@ class OrderManager
 {
 	std::vector< Order > orderList;
 public:
+	size_t count() { return orderList.size(); }
+	Order& order(size_t o) { return orderList[o]; }
+	OrderManager() {
+
+
+	}
+
 	OrderManager(std::vector<vector<string> > & csvDataOrder);
 	void print();
 	void graph(std::string& f);

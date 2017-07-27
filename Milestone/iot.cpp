@@ -6,6 +6,7 @@
 #include "o.h"
 #include "t.h"
 #include "util.h"
+/*
 int main(int argc, char* argv[])
 {
 	// 
@@ -52,8 +53,24 @@ int main(int argc, char* argv[])
 		tm.graph(filenameTask);
 		
 		
-		im.validate(tm);
-		tm.validate();
+		if (im.validate(tm) && om.validate(im) && tm.validate())
+		{
+			cout << "++++++++++++++++++++++++++++++++++++++++++\n";
+			cout << "Data has referental integraty. GOOD TO GO.\n";
+			cout << "++++++++++++++++++++++++++++++++++++++++++\n";
+
+		}
+		else
+		{
+			cout << "++++++++++++++++++++++++++++++++++++++++++\n";
+			cerr << "Data has referental integraty Problem.\n";
+			cout << "++++++++++++++++++++++++++++++++++++++++++\n";
+			throw string("Data has refeential integrity problem. FIX AND RE-SUBMIT!!!");
+		}
+
+		//im.validate(tm);
+		//om.validate(im);
+		//tm.validate();
 
 	}
 	catch (const string& e) 
@@ -63,4 +80,4 @@ int main(int argc, char* argv[])
 	}
 }
 
-
+*/

@@ -9,6 +9,8 @@ class Task
 {
 	std::string taskName, taskSlots="1", taskPass, taskFail;
 public:
+
+
 	//std::name() { return taskName; }
 	//std::slots() { return taskName; }
 	//std::pass() { return taskName; }
@@ -29,6 +31,8 @@ class TaskManager
 {
 	vector< Task > taskList;
 public:
+	size_t count() { return taskList.size(); }
+	Task& task(size_t t) { return taskList[t]; }
 	//TaskManager();
 	TaskManager(vector<vector<std::string> > & csvDataTask);
 	void print();

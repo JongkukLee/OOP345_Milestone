@@ -1,16 +1,5 @@
-﻿  o.cpp
-  iot.cpp
-  i.cpp
-  Generating Code...
-  Compiling...
-  order.cpp
-  o-test.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  task.cpp
-  t.cpp
-  t-test.cpp
-  item.cpp
-  i-test.cpp
+﻿  factory.cpp
+c:\oop345_milestone\milestone\factory.cpp(84): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\oop345_milestone\milestone\factory.cpp(50): warning C4715: '<lambda_b2df74b713e71221f0a9bede144b2af2>::operator()': not all control paths return a value
   Milestone.vcxproj -> C:\OOP345_Milestone\x64\Debug\Milestone.exe
   Milestone.vcxproj -> C:\OOP345_Milestone\x64\Debug\Milestone.pdb (Full PDB)

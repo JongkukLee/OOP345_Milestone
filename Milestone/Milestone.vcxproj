@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="factory.cpp" />
     <ClCompile Include="i-test.cpp" />
     <ClCompile Include="i.cpp" />
     <ClCompile Include="iot.cpp" />
     <ClCompile Include="item.cpp" />
+    <ClCompile Include="machine.cpp" />
     <ClCompile Include="o-test.cpp" />
     <ClCompile Include="o.cpp" />
     <ClCompile Include="order.cpp" />
@@ -33,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="i.h" />
+    <ClInclude Include="Job.h" />
+    <ClInclude Include="machine.h" />
     <ClInclude Include="o.h" />
     <ClInclude Include="t.h" />
     <ClInclude Include="util.h" />
