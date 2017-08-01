@@ -1,3 +1,16 @@
+// OOP345 Milestone 4: Assembly Line
+// File i.cpp
+// Version 1.0
+// Date 2017-08-04
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//  splitting (code factoring) the item.cpp files into i.h/i.cpp files.
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -41,11 +54,11 @@
 	}
 	void Item::print()
 	{
-		std::cout << "item=" << itemName << "";
-		std::cout << "installer=" << itemInstaller << "";
-		std::cout << "remover=" << itemRemover << "";
-		std::cout << "sequence=" << itemSequence << "";
-		std::cout << "decription=" << itemDecription << "";
+		std::cout << "item=" << itemName << ", ";
+		std::cout << "installer=" << itemInstaller << ", ";
+		std::cout << "remover=" << itemRemover << ", ";
+		std::cout << "sequence=" << itemSequence << ", ";
+		std::cout << "decription=" << itemDecription << "\n";
 		std::cout << endl;
 	}
 
@@ -53,9 +66,9 @@
 	{
 		//if (!itemInstaller.empty())
 		//{
-			gv << '"' << "Item\n" << itemName << '"';
+			gv << '"' << "Item " << itemName << '"';
 			gv << " -> ";
-			gv << '"' << "Installer\n" << itemInstaller << '"';
+			gv << '"' << "Installer " << itemInstaller << '"';
 			gv << " [color=green]";
 
 			gv << ";\n";
@@ -63,9 +76,9 @@
 
 		//if (!itemRemover.empty())
 		//{
-			gv << '"' << "Item\n" << itemName << '"';
+			gv << '"' << "Item " << itemName << '"';
 			gv << " -> ";
-			gv << '"' << "Remover\n" << itemRemover << '"';
+			gv << '"' << "Remover " << itemRemover << '"';
 			gv << " [color=red]";
 			gv << ";\n";
 		//}
@@ -112,8 +125,11 @@
 			gv << "}\n";
 			gv.close();
 
-			string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			std::string cmd = "dot";
 			cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
+
+			//string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			//cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
 			cout << "Running ->" + cmd << "\n";
 			system(cmd.c_str());
 		}
@@ -137,15 +153,17 @@
 		for (auto& item : itemList)
 		{
 			std::string installer = item.installer();
-			if (tm.find(installer) == nullptr)
+			if (!installer.empty() && tm.find(installer) == nullptr)
+			{
 				errors++;
-			std::cerr << "can not find intaller task" << installer << "\n";
-
+				std::cerr << "[" << __FILE__ << "]\n\tCannot find an intaller task [" << installer << "]\n";
+			}
 			std::string remover = item.remover();
-			if (!remover.empty() && find(remover) == nullptr)
+			if (!remover.empty() && tm.find(remover) == nullptr)
+			{
 				errors++;
-			std::cerr << "can not find remover" << remover << "\n";
-
+				std::cerr << "[" << __FILE__ << "]\n\tCannot find a remover [" << remover << "]\n";
+			}
 		}
 		//return errors === 0;
 		return errors == 0;

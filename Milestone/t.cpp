@@ -1,3 +1,16 @@
+// OOP345 Milestone 4: Assembly Line
+// File t.cpp
+// Version 1.0
+// Date 2017-08-04
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//  splitting (code factoring) the task.cpp files into t.h/t.cpp files
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -10,9 +23,9 @@
 	}
 	Task::Task(vector<std::string> line)
 	{
-      int size = line.size();
+      size_t size = line.size();
 
-      int index = size == 3 ? size + 1 : size == 2 ? size + 2 : size == 1 ? size + 3 : size;
+      size_t index = size == 3 ? size + 1 : size == 2 ? size + 2 : size == 1 ? size + 3 : size;
       
       switch (index)
       {
@@ -47,10 +60,10 @@
 	}
 	void Task::print()
 	{
-		std::cout << "name="  << taskName << "";
-		std::cout << "slots=" << taskSlots << "";
-		std::cout << "pass="  << taskPass << "";
-		std::cout << "fail="  << taskFail << "";
+		std::cout << "name="  << taskName << ", ";
+		std::cout << "slots=" << taskSlots << ", ";
+		std::cout << "pass="  << taskPass << ", ";
+		std::cout << "fail="  << taskFail << "\n";
 		std::cout << std::endl;
 	}
 
@@ -119,8 +132,11 @@
 			gv << "}\n";
 			gv.close();
 
-			std::string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			std::string cmd = "dot";
 			cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
+
+			//std::string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			//cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
 			std::cout << "Running ->" + cmd << "\n";
 			system(cmd.c_str());
 		}
@@ -132,6 +148,8 @@
 	{
 		for (size_t i = 0; i < taskList.size(); i++)
 		{
+
+			//std::cout << "test:::::::::-->" << taskList[i].name() << "<--, -->" << t << "<-- " << (taskList[i].name() == t) << std::endl;
 			if (taskList[i].name() == t)
 				return &taskList[i];
 		}
@@ -145,14 +163,16 @@
 		{
 			std::string pass = task.pass();
 			if (!pass.empty() && find(pass) == nullptr)
+			{
 				errors++;
-			std::cerr << "can not find pass" << pass << "\n";
-
+				std::cerr << "[" << __FILE__ << "]\n\tCannot find pass [" << pass << "]\n";
+			}
 			std::string fail = task.fail();
 			if (!fail.empty() && find(fail) == nullptr)
+			{
 				errors++;
-			std::cerr << "can not find fail" << fail << "\n";
-
+				std::cerr << "[" << __FILE__ << "]\n\tCannot find fail [" << fail << "]\n";
+			}
 		}
 		//return errors === 0;
 		return errors == 0;

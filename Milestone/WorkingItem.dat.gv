@@ -1,38 +1,38 @@
-digraph itemgraph {
+digraph itemGraph {
 "Item
-I7-4960X"->"Installer
-Install CPU"[color=green];
+I7-4960X" -> "Installer
+Install CPU" [color=green];
 "Item
-I7-4960X"->"Remover
-Remove CPU"[color=red];
+I7-4960X" -> "Remover
+Remove CPU" [color=red];
 "Item
-DDR 400"->"Installer
-Install Memory"[color=green];
+DDR 400" -> "Installer
+Install Memory" [color=green];
 "Item
-DDR 400"->"Remover
-Remove Memory"[color=red];
+DDR 400" -> "Remover
+Remove Memory" [color=red];
 "Item
-GeForce GTX980"->"Installer
-Install GPU"[color=green];
+GeForce GTX980" -> "Installer
+Install GPU" [color=green];
 "Item
-GeForce GTX980"->"Remover
-Remove GPU"[color=red];
+GeForce GTX980" -> "Remover
+Remove GPU" [color=red];
 "Item
-R9 FURY"->"Installer
-Install GPU"[color=green];
+R9 FURY" -> "Installer
+Install GPU" [color=green];
 "Item
-R9 FURY"->"Remover
-Remove GPU"[color=red];
+R9 FURY" -> "Remover
+Remove GPU" [color=red];
 "Item
-Power Supply 300W"->"Installer
-Install Power Supply"[color=green];
+Power Supply 300W" -> "Installer
+Install Power Supply" [color=green];
 "Item
-Power Supply 300W"->"Remover
-Remove Power Supply"[color=red];
+Power Supply 300W" -> "Remover
+Remove Power Supply" [color=red];
 "Item
-SSD-250GB"->"Installer
-Install SSD"[color=green];
+SSD-250GB" -> "Installer
+Install SSD" [color=green];
 "Item
-SSD-250GB"->"Remover
-Remove SSD"[color=red];
+SSD-250GB" -> "Remover
+Remove SSD" [color=red];
 }

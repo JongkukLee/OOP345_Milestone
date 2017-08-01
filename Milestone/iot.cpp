@@ -1,3 +1,16 @@
+// OOP345 Milestone 4: Assembly Line
+// File iot.cpp
+// Version 1.0
+// Date 2017-08-04
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//  write a iot.cpp file which read all three data types
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -6,18 +19,11 @@
 #include "o.h"
 #include "t.h"
 #include "util.h"
-/*
+
+using namespace std;
+
 int main(int argc, char* argv[])
 {
-	// 
-	// 
-	argc = 5;
-	argv[0] = "M1";
-	argv[1] = "ItemList.dat";
-	argv[2] = "CustomerOrders.dat";
-	argv[3] = "FishTankTasks.dat";
-	argv[4] = ",";
-
 
 	if (argc != 5) {
 		cerr << "Usage: " << argv[0] << " csv-file csv-delimiter\n";
@@ -52,7 +58,7 @@ int main(int argc, char* argv[])
 		tm.print();
 		tm.graph(filenameTask);
 		
-		
+#if 1
 		if (im.validate(tm) && om.validate(im) && tm.validate())
 		{
 			cout << "++++++++++++++++++++++++++++++++++++++++++\n";
@@ -67,11 +73,11 @@ int main(int argc, char* argv[])
 			cout << "++++++++++++++++++++++++++++++++++++++++++\n";
 			throw string("Data has refeential integrity problem. FIX AND RE-SUBMIT!!!");
 		}
-
-		//im.validate(tm);
-		//om.validate(im);
-		//tm.validate();
-
+#else
+		tm.validate();
+		im.validate(tm);
+		om.validate(im);
+#endif
 	}
 	catch (const string& e) 
 	{
@@ -79,5 +85,3 @@ int main(int argc, char* argv[])
 		return 2;
 	}
 }
-
-*/

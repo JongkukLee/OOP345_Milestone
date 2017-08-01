@@ -1,32 +1,41 @@
 digraph orderGraph {
+"Fardad Soleimanloo
+Dell Precision 3600" -> "Item
+I7-4960X" [color=blue];
+"Fardad Soleimanloo
+Dell Precision 3600" -> "Item
+DDR 400" [color=blue];
+"Fardad Soleimanloo
+Dell Precision 3600" -> "Item
+DDR 400" [color=blue];
 "Joseph Hughes
-HP Z230"->"Item
-I7-4960X"[color=blue];
+HP Z230" -> "Item
+I7-4960X" [color=blue];
 "Joseph Hughes
-HP Z230"->"Item
-DDR 400"[color=blue];
+HP Z230" -> "Item
+DDR 400" [color=blue];
 "Chris Szalwinski
-HP Z350"->"Item
-I7-4960X"[color=blue];
+HP Z350" -> "Item
+I7-4960X" [color=blue];
 "Chris Szalwinski
-HP Z350"->"Item
-DDR 400"[color=blue];
+HP Z350" -> "Item
+DDR 400" [color=blue];
 "Chris Szalwinski
-HP Z350"->"Item
-SSD-250GB"[color=blue];
+HP Z350" -> "Item
+SSD-250GB" [color=blue];
 "Chris Szalwinski
-HP Z350"->"Item
-R9 FURY"[color=blue];
+HP Z350" -> "Item
+R9 FURY" [color=blue];
 "Elliott Coleshill
-HP Apollo 1000"->"Item
-I7-4960X"[color=blue];
+HP Apollo 1000" -> "Item
+I7-4960X" [color=blue];
 "Elliott Coleshill
-HP Apollo 1000"->"Item
-DDR 400"[color=blue];
+HP Apollo 1000" -> "Item
+DDR 400" [color=blue];
 "Elliott Coleshill
-HP Apollo 1000"->"Item
-Power Supply 300W"[color=blue];
+HP Apollo 1000" -> "Item
+Power Supply 300W" [color=blue];
 "Elliott Coleshill
-HP Apollo 1000"->"Item
-GeForce GTX980"[color=blue];
+HP Apollo 1000" -> "Item
+GeForce GTX980" [color=blue];
 }

@@ -1,4 +1,19 @@
-#pragma once
+// OOP345 Milestone 4: Assembly Line
+// File o.h
+// Version 1.0
+// Date 2017-08-04
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//  splitting (code factoring) the order.cpp files into o.h/o.cpp files
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
+#ifndef O_H
+#define O_H
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -39,3 +54,4 @@ public:
 	//Order* find(std::string i);
 	bool validate(ItemManager& im);
 };
+#endif

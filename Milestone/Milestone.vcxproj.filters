@@ -18,13 +18,16 @@
     <ClCompile Include="util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="task.cpp">
+    <ClCompile Include="i.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="item.cpp">
+    <ClCompile Include="iot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="order.cpp">
+    <ClCompile Include="o.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,18 +35,25 @@
     <ClInclude Include="util.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="i.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="o.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="t.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FishTankTasks.dat">
+    <None Include="WorkingItem.dat">
       <Filter>Source Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ItemList.dat">
+    <None Include="WorkingOrder.dat">
       <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="CustomerOrders.dat">
+    </None>
+    <None Include="WorkingTask.dat">
       <Filter>Source Files</Filter>
-    </Text>
+    </None>
   </ItemGroup>
 </Project>

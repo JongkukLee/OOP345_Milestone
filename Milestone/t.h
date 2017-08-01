@@ -1,4 +1,19 @@
-#pragma once
+// OOP345 Milestone 4: Assembly Line
+// File t.h
+// Version 1.0
+// Date 2017-08-04
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//  splitting (code factoring) the task.cpp files into t.h/t.cpp files
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
+#ifndef T_H
+#define T_H
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -7,7 +22,7 @@
 
 class Task
 {
-	std::string taskName, taskSlots="1", taskPass, taskFail;
+	std::string taskName, taskSlots, taskPass, taskFail;
 public:
 
 
@@ -17,9 +32,9 @@ public:
 	//std::fail() { return taskName; }
 
 	std::string& name() { return taskName; }
-	std::string& slots() { return taskName; }
-	std::string& pass() { return taskName; }
-	std::string& fail() { return taskName; }
+	std::string& slots() { return taskSlots; }
+	std::string& pass() { return taskPass; }
+	std::string& fail() { return taskFail; }
 
 	Task();
 	Task(vector<std::string> line);
@@ -41,3 +56,4 @@ public:
 	Task* find(std::string t);
 	bool validate();
 };
+#endif

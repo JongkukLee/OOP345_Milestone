@@ -19,20 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="item.cpp" />
-    <ClCompile Include="order.cpp" />
-    <ClCompile Include="task.cpp" />
+    <ClCompile Include="i.cpp" />
+    <ClCompile Include="iot.cpp" />
+    <ClCompile Include="o.cpp" />
+    <ClCompile Include="t.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="i.h" />
+    <ClInclude Include="o.h" />
+    <ClInclude Include="t.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FishTankTasks.dat" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ItemList.dat" />
-    <Text Include="CustomerOrders.dat" />
+    <None Include="WorkingItem.dat" />
+    <None Include="WorkingOrder.dat" />
+    <None Include="WorkingTask.dat" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D1F1AAEE-16AB-45F7-8451-DF38F635A659}</ProjectGuid>

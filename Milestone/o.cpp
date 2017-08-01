@@ -1,3 +1,16 @@
+// OOP345 Milestone 4: Assembly Line
+// File o.cpp
+// Version 1.0
+// Date 2017-08-04
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//  splitting (code factoring) the order.cpp files into o.h/o.cpp files
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -29,11 +42,11 @@
 	void Order::print()
 	{
 #if 1
-		std::cout << "customer='" << orderCustomer << "'";
-		std::cout << " product='" << orderProduct << "'";
+		std::cout << "customer=" << orderCustomer << ", ";
+		std::cout << " product=" << orderProduct << ", ";
 
 		for(auto& item: itemsOrdered)
-			std::cout << " item='" << item << "'";
+			std::cout << " item=" << item << ", ";
 
 		std::cout << endl;
 #endif
@@ -46,9 +59,9 @@
 
 		for (auto& item : itemsOrdered)
 		{
-			gv << '"' << orderCustomer << "\n" << orderProduct << '"';
+			gv << '"' << orderCustomer << " " << orderProduct << '"';
 			gv << " -> ";
-			gv << '"' << "Item\n" << item << '"';
+			gv << '"' << "Item " << item << '"';
 			gv << " [color=blue]";
 
 			gv << ";\n";
@@ -90,8 +103,11 @@
 			gv << "}\n";
 			gv.close();
 
-			std::string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			std::string cmd = "dot";
 			cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
+
+			//std::string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			//cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
 			cout << "Running ->" + cmd << "\n";
 			system(cmd.c_str());
 		}
@@ -110,7 +126,7 @@
 				if (im.find(order.item(i)) == nullptr)
 				{
 					errors++;
-					std::cerr << "cannot find ordered item '" << order.item(i) << "'\n";
+					std::cerr << "[" << __FILE__ << "]\n\tcannot find ordered item '" << order.item(i) << "'\n";
 
 				}
 
@@ -118,9 +134,4 @@
 
 		}
 		return errors == 0;
-
-
-
-
 	}
-

@@ -9,7 +9,11 @@
 // Revision History
 ///////////////////////////////////////////////////////////
 // Name     Date    Reason
-//
+// JK Lee   8/4     Add validation for Milestone4
+//	1. All passed / failed tasks referenced in the task data exit.
+//	2. All installer / remover tasks referenced in the item data exist in the task data.
+//	3. All items ordered by a customer exist in the item data.
+//	4. There are no task or items with duplicate names.
 ///////////////////////////////////////////////////////////
 #include <iostream>
 #include <fstream>
