@@ -27,51 +27,9 @@
     <ClCompile Include="order.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="t.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="t-test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="i.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="i-test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="o.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="o-test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="iot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="factory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="machine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="util.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="t.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="i.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="o.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="machine.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Job.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

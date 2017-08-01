@@ -1,0 +1,10 @@
+I5           | Install CPU          | Remove CPU          | 320 | Intel I5 Central Processing Unit
+I7           | Install CPU          | Remove CPU          | 340 | Intel I7 Central Processing Unit
+DDR 266      | Install Memory       | Remove Memory       | 410 | Samsung DDR-266 Memory Stick
+DDR 300      | Install Memory       | Remove Memory       | 420 | Samsung DDR-300 Memory Stick
+DDR 333      | Install Memory       | Remove Memory       | 430 | Samsung DDR-333 Memory Stick
+DDR 400      | Install Memory       | Remove Memory       | 440 | Samsung DDR-400 Memory Stick
+SSD 256GB    | Install SSD          | Remove SSD          | 450 | Western Digital 256 GB SSD
+AMDGPU       | Install GPU          | Remove GPU          | 525 | AMD Nano
+NVidiaGPU    | Install GPU          | Remove GPU          | 550 | Nvidia Geforce 750M
+Power Supply | Install Power Supply | Remove Power Supply | 100 | 

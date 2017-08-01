@@ -1,10 +1,23 @@
+// OOP345 Milestone 2: Tasks
+// File util.cpp
+// Version 1.0
+// Date 2017-07-14
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//      read and print CSV file
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
 #include <fstream>
-//#include "util.h"
 
+// print the elements of lines vector from table vector
 void csvPrint(std::vector< std::vector<std::string> > & csvData)
 {
 	std::cout << "range-based for:\n";
@@ -33,6 +46,7 @@ void csvPrint(std::vector< std::vector<std::string> > & csvData)
 
 }
 
+// remove the spaces
 void TrimSpaces(std::string& s)
 {
 	while (!s.empty() && (s[0] == ' ' || s[0] == '\t'))
@@ -42,6 +56,7 @@ void TrimSpaces(std::string& s)
 		s.erase(s.size() - 1, 1);
 }
 
+// put the elements of lines vector into table vector
 void csvRead(std::string& filename, char delimiter, std::vector< std::vector<std::string> > & csvData)
 {
 
@@ -62,7 +77,7 @@ void csvRead(std::string& filename, char delimiter, std::vector< std::vector<std
 			while (index < line.size()) {
 				if (line[index] == delimiter) {
 					TrimSpaces(field);
-					fields.push_back(move(field));
+					if(field.size() != 0) fields.push_back(move(field));
 				}
 				else {
 					field += line[index];
@@ -70,9 +85,9 @@ void csvRead(std::string& filename, char delimiter, std::vector< std::vector<std
 				index++;
 			}
 			TrimSpaces(field);
-			fields.push_back(move(field));
+      if (field.size() != 0) fields.push_back(move(field));
 
-			csvData.push_back(move(fields));
+      if (fields.size() != 0)csvData.push_back(move(fields));
 		}
 
 		in.close();
@@ -82,6 +97,7 @@ void csvRead(std::string& filename, char delimiter, std::vector< std::vector<std
 	}
 }
 
+// validate Task Name
 bool validTaskName(std::string& s)
 {
 	if (s.empty())
@@ -95,6 +111,7 @@ bool validTaskName(std::string& s)
 	return true;
 }
 
+// validate Task Slots
 bool validTaskSlots(std::string& s)
 {
 	if (s.empty())
@@ -108,6 +125,7 @@ bool validTaskSlots(std::string& s)
 	return true;
 }
 
+// validate Item Name
 bool validItemName(std::string& s)
 {
 	if (s.empty())
@@ -121,6 +139,7 @@ bool validItemName(std::string& s)
 	return true;
 }
 
+// validate Item Sequence
 bool validItemSequence(std::string& s)
 {
 	if (s.empty())

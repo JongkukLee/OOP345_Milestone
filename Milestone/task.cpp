@@ -1,12 +1,29 @@
+// OOP345 Milestone 2: Tasks
+// File Tasks.cpp
+// Version 1.0
+// Date 2017-07-14
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//	1. Using the CSV reader, read the task data files from the project website.  
+//	2. Create a file Task.cpp that defines a pair of classes to hold the task data. 
+//	3. The task data type requires a 'manager' which contains (composition) a list of all task instances.
+//	4. The task class is the instance of a task, parsing, printing, graphing, and other functions as required.
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
 #include "util.h"
 
+// Task class
 class Task
 {
-	std::string taskName, taskSlots="1", taskPass, taskFail;
+	std::string taskName, taskSlots, taskPass, taskFail;
 public:
 	Task(){
 
@@ -62,7 +79,7 @@ public:
 		if (! taskPass.empty())
 		{
 			gv << '"' << taskName << '"';
-			gv << " -> ";
+			gv << "->";
 			gv << '"' << taskPass << '"';
 			gv << " [color=green]";
 
@@ -72,7 +89,7 @@ public:
 		if (!taskFail.empty())
 		{
 			gv << '"' << taskName << '"';
-			gv << " -> ";
+			gv << "->";
 			gv << '"' << taskFail << '"';
 			gv << " [color=red]";
 			gv << ";\n";
@@ -87,6 +104,7 @@ public:
 	}
 };
 
+// Task Manager Class
 class TaskManager
 {
 	vector< Task > taskList;
@@ -125,7 +143,7 @@ public:
 			gv << "}\n";
 			gv.close();
 
-			std::string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			std::string cmd = "dot";
 			cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
 			std::cout << "Running ->" + cmd << "\n";
 			system(cmd.c_str());
@@ -134,15 +152,10 @@ public:
 	}
 
 };
+
 /*
 int main(int argc, char* argv[])
 {
-	// 
-	// 
-	argc = 3;
-	argv[0] = "M1";
-	argv[1] = "FishTankTasks.dat";
-	argv[2] = ",";
 	if (argc != 3) {
 		cerr << "Usage: " << argv[0] << " csv-file csv-delimiter\n";
 		return 1;
@@ -151,8 +164,7 @@ int main(int argc, char* argv[])
 	string filename = argv[1];
 	char   delimiter = argv[2][0];
 
-	try 
-	{
+	try {
 		vector< vector<string> > csvDataTask;
 		csvRead(filename, delimiter, csvDataTask);
 		//csvPrint(csvDataTask);
@@ -160,11 +172,12 @@ int main(int argc, char* argv[])
 		TaskManager tm(csvDataTask);
 		tm.print();
 		tm.graph(filename);
+
 	}
-	catch (const string& e) 
-	{
+	catch (const string& e) {
 		cerr << "It threw! -->" << e << "\n";
 		return 2;
 	}
+
 }
 */

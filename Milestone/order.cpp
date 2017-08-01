@@ -1,3 +1,21 @@
+// OOP345 Milestone 3: Order and Item
+// File order.cpp
+// Version 1.0
+// Date 2017-07-28
+// Author Jongkuk Lee ( jlee465@myseneca.ca, 127730158 )
+// Description
+//  1. Verify each of the item, and order data files from the project website are read successfully 
+//     by your CSV file reader..
+//  2. Copy Task.cpp to Item.cpp.
+//  3. Hack Item.cpp to process item data : read it, parse it, print it, graph it.
+//  4. Copy Item.cpp to Order.cpp
+//  5. Hack Order.cpp to process order data : read it, parse it, print it, graph it.
+//
+// Revision History
+///////////////////////////////////////////////////////////
+// Name     Date    Reason
+//
+///////////////////////////////////////////////////////////
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -6,7 +24,7 @@
 
 using namespace std;
 
-// customer name, product name, I1, I2, ......
+// Order class
 class Order
 {
 	string orderCustomer, orderProduct;
@@ -64,6 +82,7 @@ public:
 	}
 };
 
+// Order Manager Class
 class OrderManager
 {
 	vector< Order > orderList;

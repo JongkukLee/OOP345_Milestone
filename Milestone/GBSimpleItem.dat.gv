@@ -1,0 +1,8 @@
+digraph itemgraph {
+"Item
+DDR 266"->"Installer
+Memory"[color=green];
+"Item
+DDR 266"->"Remover
+Remove Memory"[color=red];
+}
