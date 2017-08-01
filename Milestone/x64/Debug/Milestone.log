@@ -1,8 +1,7 @@
-﻿  util.cpp
-  task.cpp
-c:\workshop\oop345\oop345_milestone\milestone\task.cpp(33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  task.cpp
+c:\oop345_milestone\milestone\task.cpp(33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   order.cpp
   item.cpp
   Generating Code...
-  Milestone.vcxproj -> C:\Workshop\OOP345\OOP345_Milestone\x64\Debug\Milestone.exe
-  Milestone.vcxproj -> C:\Workshop\OOP345\OOP345_Milestone\x64\Debug\Milestone.pdb (Full PDB)
+  Milestone.vcxproj -> C:\OOP345_Milestone\x64\Debug\Milestone.exe
+  Milestone.vcxproj -> C:\OOP345_Milestone\x64\Debug\Milestone.pdb (Full PDB)

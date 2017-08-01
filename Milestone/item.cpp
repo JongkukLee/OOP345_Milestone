@@ -77,9 +77,9 @@ public:
 	{
 		//if (!itemInstaller.empty())
 		//{
-			gv << '"' << "Item\n" << itemName << '"';
+			gv << '"' << "Item " << itemName << '"';
 			gv << " -> ";
-			gv << '"' << "Installer\n" << itemInstaller << '"';
+			gv << '"' << "Installer " << itemInstaller << '"';
 			gv << " [color=green]";
 
 			gv << ";\n";
@@ -87,9 +87,9 @@ public:
 
 		//if (!itemRemover.empty())
 		//{
-			gv << '"' << "Item\n" << itemName << '"';
+			gv << '"' << "Item " << itemName << '"';
 			gv << " -> ";
-			gv << '"' << "Remover\n" << itemRemover << '"';
+			gv << '"' << "Remover " << itemRemover << '"';
 			gv << " [color=red]";
 			gv << ";\n";
 		//}
@@ -142,8 +142,11 @@ public:
 			gv << "}\n";
 			gv.close();
 
-			string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			std::string cmd = "dot";
 			cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
+
+			//string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			//cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
 			cout << "Running ->" + cmd << "\n";
 			system(cmd.c_str());
 		}
@@ -151,37 +154,3 @@ public:
 	}
 
 };
-
-int main(int argc, char* argv[])
-{
-	// 
-	// 
-	argc = 3;
-	argv[0] = "M1";
-	argv[1] = "ItemList.dat";
-	argv[2] = "|";
-	if (argc != 3) {
-		cerr << "Usage: " << argv[0] << " csv-file csv-delimiter\n";
-		return 1;
-	}
-
-	string filename = argv[1];
-	char   delimiter = argv[2][0];
-
-	try
-	{
-		vector< vector<string> > csvDataItem;
-		csvRead(filename, delimiter, csvDataItem);
-		csvPrint(csvDataItem);
-
-		ItemManager im(csvDataItem);
-		im.print();
-		im.graph(filename);
-	}
-	catch (const string& e)
-	{
-		cerr << "It threw! -->" << e << "\n";
-		return 2;
-	}
-}
-

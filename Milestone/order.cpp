@@ -71,9 +71,9 @@ public:
 
 		for (auto& item : itemsOrdered)
 		{
-			gv << '"' << orderCustomer << "\n" << orderProduct << '"';
+			gv << '"' << orderCustomer << " " << orderProduct << '"';
 			gv << " -> ";
-			gv << '"' << "Item\n" << item << '"';
+			gv << '"' << "Item " << item << '"';
 			gv << " [color=blue]";
 
 			gv << ";\n";
@@ -121,8 +121,11 @@ public:
 			gv << "}\n";
 			gv.close();
 
-			string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			std::string cmd = "dot";
 			cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
+
+			//string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			//cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
 			cout << "Running ->" + cmd << "\n";
 			system(cmd.c_str());
 		}
@@ -130,38 +133,3 @@ public:
 	}
 
 };
-
-/*
-int main(int argc, char* argv[])
-{
-	// 
-	// 
-	argc = 3;
-	argv[0] = "M1";
-	argv[1] = "CustomerOrders.dat";
-	argv[2] = "|";
-	if (argc != 3) {
-		cerr << "Usage: " << argv[0] << " csv-file csv-delimiter\n";
-		return 1;
-	}
-
-	string filename = argv[1];
-	char   delimiter = argv[2][0];
-
-	try
-	{
-		vector< vector<string> > csvDataOrder;
-		csvRead(filename, delimiter, csvDataOrder);
-		csvPrint(csvDataOrder);
-
-		OrderManager im(csvDataOrder);
-		im.print();
-		im.graph(filename);
-	}
-	catch (const string& e)
-	{
-		cerr << "It threw! -->" << e << "\n";
-		return 2;
-	}
-}
-*/
