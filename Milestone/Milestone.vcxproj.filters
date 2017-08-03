@@ -30,6 +30,12 @@
     <ClCompile Include="t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="factory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="machine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="util.h">
@@ -42,6 +48,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="t.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Job.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="machine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

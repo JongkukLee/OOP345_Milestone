@@ -27,6 +27,9 @@ class Order
 	std::string orderCustomer, orderProduct;
 	std::vector<string> itemsOrdered;
 public:
+	std::string& customer() { return orderCustomer;  }
+	std::string& product() { return orderProduct; }
+
 	size_t count() { return itemsOrdered.size(); }
 	std::string& item(size_t i) { return itemsOrdered[i]; }
 

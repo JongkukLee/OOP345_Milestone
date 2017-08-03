@@ -39,6 +39,9 @@ class ItemManager
 {
 	std::vector< Item > itemList;
 public:
+	size_t count() { return itemList.size(); }
+	Item& item(size_t i) { return itemList[i]; }
+
 	ItemManager(std::vector<vector<string> > & csvDataItem);
 	void print();
 	void graph(std::string& f);

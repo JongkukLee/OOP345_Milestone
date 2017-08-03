@@ -76,10 +76,10 @@ public:
 		for (size_t m = 0; m < machineList.size(); m++)
 		{
 			if (machineList[m].isSource() && machineList[m].isSink())
-				continue;
+				continue; // ignore singletone nodes
 			if (machineList[m].isSource())
 			{
-				if (sourceNode == 1)
+				if (sourceNode == -1)
 				{
 					sourceNode = m;
 				}
@@ -94,7 +94,7 @@ public:
 
 		}
 		cout << "sourceNode is " << sourceNode << "\n";
-		if (sourceNode == 1)
+		if (sourceNode == -1)
 			throw string("No source node FIX TASK AND RESUBMIT!!!");
 
 		// STEP3. Add jobs to sourceNode machine's job queue
@@ -107,22 +107,165 @@ public:
 		for (auto& m : machineList) {
 			if (m.jobSize())
 				cout << " has " << m.jobSize() << " jobs in its jobQ";
+			cout << "\n";
 		}
-		cout << "\n";
+
+		// classify all machie
+		for (auto& m : machineList) {
+			m.Classify(im);
+		}
+
+		// Step4. time loop
+		int time = 0;
+
+		while (true) { // time loop
+
+			bool bAllDone = true;
+			for (auto& m : machineList) {
+				if (m.jobSize())
+				{
+					bAllDone = false;
+					break;
+				}
+			}
+			if (bAllDone) {
+				cout << "All done, exiting time loop\n";
+				break; // exit time loop
+			}
+
+			for (auto& m : machineList) { // machine loop
+				// if jobQ is empty for this machine, nothing to do
+				if (m.jobSize() == 0)
+				{
+
+					continue; // nothing for this machine to do
+
+				}
+
+				Job job = m.getJob();
+
+				cout << "job" << job.customer() << "/" << job.product() << " is set machine " << m.name() << "\n";
+
+
+
+				if (m.isSink()) {
+					// if job not complete, move it to the source node
+					if ( job.jobComplete())
+					{
+						cout << "job" << job.customer() << "/" << job.product() << " terminated machine " << m.name() << "\n";
+					}
+					else { // send it 
+						cout << "job" << job.customer() << "/" << job.product() << " terminated machine " << m.name() << "\n";
+						cout << "job is  not complete. re-routing back to source node" << sourceNode << "\n";
+
+						machineList[sourceNode].addJob(move(job));
+					}
+					continue;
+				}
+
+
+
+				bool bDidSomething = false;
+				// are we an installer?
+				if (m.getInstaller()) {
+					for (size_t i = 0; i < job.count(); i++) {
+						if (job.getInstalled(i))
+							continue; // 
+						string itemName = job.item(i); // say, 'I7'
+						string installer = im.find(itemName) -> installer(); // say, 'INSTALL CPU'
+
+						if (m.name() == installer) {
+
+							// install the item
+							job.setInstalled(i, true);
+							time++;
+							bDidSomething = true;
+							break;
+						}
+					}
+				}
+
+				// are we a remover?
+				if (m.getRemover()) {
+					for (int i = job.count(); i >= 0; i--) { // remove the last 'I7', not the first 'I7'
+						if (!job.getInstalled(i))
+							continue; // 
+						string itemName = job.item(i); // say, 'I7'
+
+						string remover = im.find(itemName) -> remover(); // say, 'REMOVE CPU'
+
+						if (m.name() == remover) {
+
+							// remove the item
+							job.setInstalled(i, true);
+							time++;
+							bDidSomething = true;
+							break;
+						}
+
+
+					}
+				}
+
+				auto movePass = [&] {
+					string pass = m.pass();
+					for (auto & m2 : machineList) { // machine loop
+						if (m2.name() == pass) {
+
+							m.addJob(move(job));
+							break;
+						}
+
+					}
+				};
+
+
+				auto moveFail = [&] {
+					string fail = m.fail();
+					for (auto & m2 : machineList) { // machine loop
+						if (m2.name() == fail) {
+
+							m.addJob(move(job));
+							break;
+						}
+
+					}
+				};
+
+
+				if (!bDidSomething) {
+					movePass(); // move 'job' to pass
+					continue; // next machine in machine loop
+				}
+
+				if (m.fail().empty()) {
+					movePass(); // move 'job' to pass
+					continue; // nextmachine in machine loop
+
+
+					if (rand() & 1) { // add passed (1), even failed (0) 
+						movePass(); // move 'job' to pass
+					}
+					else {
+						moveFail(); // move 'job' to fail
+
+					}
+				}
+
+			} // machine loop
+
+		} // time loop
 	}
-
 };
-
-/*
 int main(int argc, char* argv[])
 {
 	// 
 	// 
 	argc = 5;
 	argv[0] = "M1";
-	argv[1] = "ItemList.dat";
-	argv[2] = "CustomerOrders.dat";
-	argv[3] = "FishTankTasks.dat";
+	argv[1] = "WorkingItem.dat";
+	argv[2] = "WorkingOrder.dat";
+	argv[3] = "WorkingTask.dat";
 	argv[4] = ",";
 
 
@@ -188,5 +331,5 @@ int main(int argc, char* argv[])
 		return 2;
 	}
 }
-*/
+
 
