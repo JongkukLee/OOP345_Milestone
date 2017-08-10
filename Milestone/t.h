@@ -40,6 +40,7 @@ public:
 	Task(vector<std::string> line);
 	void print();
 	void graph(fstream& gv);
+  void setName(std::string name) { taskName = name; }
 };
 
 class TaskManager
@@ -55,5 +56,6 @@ public:
 
 	Task* find(std::string t);
 	bool validate();
+
 };
 #endif

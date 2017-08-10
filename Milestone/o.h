@@ -34,7 +34,7 @@ public:
 	std::string& item(size_t i) { return itemsOrdered[i]; }
 
 	Order();
-	Order(std::vector<string> line);
+	Order(std::vector<string>& line);
 	void print();
 	void graph(std::fstream& gv);
 };

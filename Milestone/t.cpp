@@ -132,11 +132,11 @@
 			gv << "}\n";
 			gv.close();
 
-			std::string cmd = "dot";
-			cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
-
-			//std::string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			//std::string cmd = "dot";
 			//cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
+
+			std::string cmd = "C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe";
+			cmd += "  -Tpng " + f + ".gv" + " > " + f + ".gv.png";
 			std::cout << "Running ->" + cmd << "\n";
 			system(cmd.c_str());
 		}
