@@ -33,9 +33,6 @@
     <ClCompile Include="factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="machine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="util.h">
@@ -50,10 +47,10 @@
     <ClInclude Include="t.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Job.h">
+    <ClInclude Include="machine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="machine.h">
+    <ClInclude Include="job.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
